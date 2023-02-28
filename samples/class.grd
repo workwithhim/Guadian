@@ -1,0 +1,42 @@
+package sample guardian 0.0.1
+
+interface Noisy {
+    makeNoise() string
+}
+
+abstract class Animal is Noisy {
+
+    func getName() string {
+        return ""
+    }
+
+}
+
+// must implement the interface
+class Dog {
+
+    var name string
+
+    constructor(n string){
+        this.name = n
+    }
+
+    func makeNoise() string {
+        return "Woof!"
+    }
+
+}
+
+class Pupper inherits Dog {
+
+    func makeNoise() string {
+        return "woof..."
+    }
+}
+
+func main(){
+    d = new Dog("Cookie")
+    io.Printf("%s: %s", d.getName(), d.makeNoise())
+    p = new Pupper()
+    io.Printf("%s: %s", p.getName(), p.makeNoise())
+}
